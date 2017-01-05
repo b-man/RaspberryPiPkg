@@ -235,7 +235,7 @@
 
   RVCT:*_*_ARM_PLATFORM_FLAGS == --cpu Cortex-A8
 
-#  *_*_*_CC_FLAGS = -DDISABLE_NEW_DEPRECATED_INTERFACES
+  *_*_*_CC_FLAGS = -DDISABLE_NEW_DEPRECATED_INTERFACES
 
 ################################################################################
 #

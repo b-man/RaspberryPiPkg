@@ -84,7 +84,7 @@ LibPcdGet64 (
 
                 Status = MailboxProperty(MAILBOX_CHANNEL_PROPERTY_ARM_VC, (MAILBOX_HEADER*)&MbGetMemory);
                 if (Status == EFI_SUCCESS) {
-                    PcdSet64(PcdSystemMemorySize, (MbGetMemory.Size - FixedPcdGet64(PcdSystemMemoryBase)));
+                    PcdSet64S(PcdSystemMemorySize, (MbGetMemory.Size - FixedPcdGet64(PcdSystemMemoryBase)));
                 } else {
                     // Assert immediately because this means VC firmware has failed
                     ASSERT(FALSE);
@@ -103,7 +103,7 @@ LibPcdGet64 (
 
                 Status = MailboxProperty(MAILBOX_CHANNEL_PROPERTY_ARM_VC, (MAILBOX_HEADER*)&MbGetMemory);
                 if (Status == EFI_SUCCESS) {
-                    PcdSet64(PcdGpuMemorySize, MbGetMemory.Size);
+                    PcdSet64S(PcdGpuMemorySize, MbGetMemory.Size);
                 } else {
                     // Assert immediately because this means VC firmware has failed
                     ASSERT(FALSE);
@@ -123,22 +123,20 @@ LibPcdGet64 (
 }
 
 /**
-  This function sets a value for a dynamic token.
+  This function provides a means by which to set a value for a given PCD token.
 
   Sets the 64-bit value for the token specified by TokenNumber
-  to the value specified by Value.  Value is returned.
+  to the value specified by Value.
 
-  If the set operation was not correctly performed, then ASSERT().
+  @param[in] TokenNumber    The PCD token number to set a current value for.
+  @param[in] Value          The 64-bit value to set.
 
-  @param[in]  TokenNumber   The PCD token number to set a current value for.
-  @param[in]  Value         The 64-bit value to set.
-
-  @return Return the value that was set.
+  @return The status of the set operation.
 
 **/
-UINT64
+RETURN_STATUS
 EFIAPI
-LibPcdSet64 (
+LibPcdSet64S (
     IN UINTN             TokenNumber,
     IN UINT64            Value
     )
@@ -152,7 +150,7 @@ LibPcdSet64 (
 
     Pcd->Value = Value;
 
-    return Value;
+    return EFI_SUCCESS;
 }
 
 /**
