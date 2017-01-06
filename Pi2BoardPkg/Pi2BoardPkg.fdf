@@ -200,6 +200,11 @@ READ_LOCK_STATUS   = TRUE
   INF MdeModulePkg/Universal/BdsDxe/BdsDxe.inf
   INF MdeModulePkg/Application/UiApp/UiApp.inf
 
+  #
+  # Splash Screen (Raspberry Pi Logo)
+  #
+  INF RaspberryPiPkg/Pi2BoardPkg/Logo/LogoDxe.inf
+
 [FV.FVMAIN_COMPACT]
 FvAlignment        = 8
 ERASE_POLARITY     = 1
@@ -337,4 +342,3 @@ READ_LOCK_STATUS   = TRUE
     UI        STRING="$(MODULE_NAME)" Optional
     VERSION   STRING="$(INF_VERSION)" Optional BUILD_NUM=$(BUILD_NUMBER)
   }
-
