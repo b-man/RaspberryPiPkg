@@ -515,7 +515,7 @@
   #
   # Default boot timeout
   #
-  gEfiMdePkgTokenSpaceGuid.PcdPlatformBootTimeOut|10
+  gEfiMdePkgTokenSpaceGuid.PcdPlatformBootTimeOut|5
 
   #
   # MBR+GPT Workaround for SD Card
