@@ -274,7 +274,6 @@
 
   ## If TRUE, Graphics Output Protocol will be installed on virtual handle created by ConsplitterDxe.
   #  It could be set FALSE to save size.
-  # ConsplitterDxe is currently not used
   gEfiMdeModulePkgTokenSpaceGuid.PcdConOutGopSupport|TRUE
 
   # The secondary cores are parked in the Pi2 boot firwmware. This flag triggers
@@ -616,9 +615,7 @@
   EmbeddedPkg/EmbeddedMonotonicCounter/EmbeddedMonotonicCounter.inf
 
   MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf
-  # Remove console splitter as it needs to be fixed to recognized valid
-  # console input, output and error
-  #MdeModulePkg/Universal/Console/ConSplitterDxe/ConSplitterDxe.inf
+  MdeModulePkg/Universal/Console/ConSplitterDxe/ConSplitterDxe.inf
   MdeModulePkg/Universal/Console/GraphicsConsoleDxe/GraphicsConsoleDxe.inf
   MdeModulePkg/Universal/Console/TerminalDxe/TerminalDxe.inf
   MdeModulePkg/Universal/SerialDxe/SerialDxe.inf
