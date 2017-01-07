@@ -153,6 +153,7 @@ READ_LOCK_STATUS   = TRUE
   INF MdeModulePkg/Universal/Acpi/AcpiTableDxe/AcpiTableDxe.inf
   INF MdeModulePkg/Universal/Acpi/AcpiPlatformDxe/AcpiPlatformDxe.inf
   INF RuleOverride=ACPITABLE RaspberryPiPkg/Pi2BoardPkg/AcpiTables/AcpiTables.inf
+  INF MdeModulePkg/Universal/Acpi/BootGraphicsResourceTableDxe/BootGraphicsResourceTableDxe.inf
 
   #
   # ARM GIC+GIT Drivers
