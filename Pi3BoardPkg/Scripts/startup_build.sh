@@ -41,9 +41,9 @@ function build_startup_code()
 	fi
 
 	echo -e "# Building `basename $fname` #\n"
-	arm-none-eabi-gcc -c $fname -o /tmp/$$.o -march=armv7-a
+	arm-eabi-gcc -c $fname -o /tmp/$$.o -march=armv7-a
 	echo -e "# Generating `basename $outfile` #\n"
-	arm-none-eabi-objcopy /tmp/$$.o -O binary --pad-to $size $outfile
+	arm-eabi-objcopy /tmp/$$.o -O binary --pad-to $size $outfile
 
 	retval=$?
 

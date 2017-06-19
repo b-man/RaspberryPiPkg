@@ -41,8 +41,8 @@ then
       TARGET_TOOLS=RVCT31CYGWIN
       ;;
     Linux*)
-      TARGET_TOOLS=GCC48
-      export GCC48_ARM_PREFIX=arm-none-eabi-
+      TARGET_TOOLS=GCC5
+      export GCC5_ARM_PREFIX=arm-eabi-
       ;;
     Darwin*)
       Major=$(uname -r | cut -f 1 -d '.')
